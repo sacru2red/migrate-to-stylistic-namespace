@@ -1,45 +1,15 @@
+// Migrate built-in rules to @stylistic/js namespace
 /* eslint @stylistic/migrate/migrate-js: "error" */
+
+// Migrate `@typescript-eslint` rules to @stylistic/ts namespace
 /* eslint @stylistic/migrate/migrate-ts: "error" */
 
 module.exports = {
-  root: true,
+  // root: true,
+  // plugins: ['@stylistic/migrate', stylistic],
   plugins: ['@stylistic/migrate'],
   rules: {
-    '@stylistic/js/no-multi-spaces': [
-      'error',
-      {
-        ignoreEOLComments: true,
-      },
-    ],
-    'no-use-before-define': 'off',
-    'no-undef': 'off',
-    'no-unused-vars': [
-      2,
-      {
-        vars: 'all',
-        args: 'after-used',
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_|^e$',
-        varsIgnorePattern: '^_|^e$',
-      },
-    ],
-    '@stylistic/multiline-ternary': 'off',
-    'no-restricted-imports': [
-      'error',
-      {
-        patterns: ['@mui/*/*/*'],
-      },
-    ],
-    '@stylistic/js/comma-dangle': 'off',
-    // @TODO turn on this option
-    'no-alert': 'off',
-    'no-shadow': [
-      'warn',
-      {
-        allow: ['_'],
-        hoist: 'all',
-      },
-    ],
-    'no-void': 'off',
+    indent: ['error', 2],
+    'no-multi-spaces': 'error',
   },
 }
